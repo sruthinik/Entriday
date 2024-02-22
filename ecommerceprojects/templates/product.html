@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}E-Store Products{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="col-12 col-md-12 ">
+        <div style="min-min-width:18rem;">
+            <img src="{{Product.image}}" alt="{{product.name}}">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}E-Store- Pick your valuable items.. {% endblock %}
+{% block content %}
+{% if category %}
+<div>
+    <div class="row">
+        <div claa="mx-auto">
+            <p class="text-center"><a href ="{url 'allproducts' %}">  Our products category</a></p>
+        </div>
+    </div>
+</div>
+{% endif %}
+<div class="mx-auto">
+    {% if category %}
+    <img src="{{category.image.url}}" alt="{{category.name}}" style="width:100%; height=600px;">
+</div>
+<br>
+<div class="text-center">
+    <h1>{{category.name}}</h1>
+    <p>{{category.description}}</p>
+</div>
+{% else %}
+
+  <div>
+    <img src="static/imagefolder/wall.jpg" alt="wallpaper" style="width:1600px; height:600px;">
+  </div>
+
+  <div>
+      <h1 style="text-align:center;">...Online Store...</h1>
+      <p>An online store is an ecommerce website or app where buyers can see a catalog of products or services and electronically purchase them. A typical representation of an online store is a brick-and-mortar retail business that also displays and sells its products on a website.The virtual store of a retailer that sells goods or services over the Internet.</p>
+  </div>
+</div>
+{% endif %}
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-9 col-sm-12 col-md-4">
+        <div class="card text-center" style="width: 18rem;" ><img class="card-img-top" src="{{Product.image.url}}" alt="{{Product.name}}" style="height:18rem; width:100%;">
+    <div class="card-body">
+        <h4>{{product.name}}</h4>
+        <p>{{product.price}}</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+    </div>
+    {% endfor %}
+
+</div>
+</div>
+
+
+
+  {% endblock %}
+
+
+
+
+
